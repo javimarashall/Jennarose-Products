@@ -1,0 +1,22 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const shirtSchema =  new Schema ({
+    name: {
+        type: String,
+        trim: true,
+        required: "name is required" 
+    },
+    color: {
+        type: String,
+        required: "color is required" 
+    },
+    size: {
+        type: String,
+        required: "size is required" 
+    },
+    tags: [{
+        type: Schema.Types.ObjectId,
+        ref: "Tag"
+    }] 
+});
